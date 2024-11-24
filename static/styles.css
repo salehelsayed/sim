@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+#graph {
+    width: 80%;
+    height: 600px;
+    margin: auto;
+} 

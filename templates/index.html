@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Graph Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Upload JSON File to Visualize Graph</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="json_file" accept=".json" required>
+        <button type="submit">Upload and Visualize</button>
+    </form>
+    {% if graph_json %}
+        <div id="graph"></div>
+        <script>
+            var graph = {{ graph_json|safe }};
+            Plotly.newPlot('graph', graph.data, graph.layout);
+        </script>
+    {% endif %}
+</body>
+</html> 
